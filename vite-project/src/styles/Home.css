@@ -1,0 +1,169 @@
+
+.banner{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 70vh;
+    background-image: url('../assets/Banner_pic.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    align-items: center;
+}
+
+
+.categories{
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.categories p{
+    margin-bottom: 45px;
+    
+}
+
+.categories h2{
+    font-size: 50px;
+    
+}
+
+.categoriesCarousel{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    height: 50vh;
+}
+
+.categoriesCarousel h3{
+    color: black;
+    font-size: 30px;
+}
+
+.categoryItem {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 250ms;
+    scale: 1;
+}
+
+.categoryItem:hover{
+    transition: all 250ms;
+    scale: 1.04;
+}
+
+ .categoryImg{
+   
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+    border-radius: 15px; */
+
+    width: 100%;
+    overflow: hidden;
+    height: 466.3px;
+    margin-bottom: 1.21rem;
+    border-radius: .5rem;
+} 
+
+.categoryImg Img{
+    /* height: 80%;
+    width: 80%; */
+
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.categoryImg:hover img {
+    transform: scale(1.2);
+}
+
+.products{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h2{
+    font-size: 30px;
+}
+
+.products_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+}
+
+
+@media (max-width: 768px) {
+
+    .banner{
+        height: 35vh;
+    }
+    .banner h2{
+        font-size: 36px
+    }
+    .banner p{
+        display: none;
+    }
+
+ 
+
+    .categoryImg Img{
+        height: 100%;
+        width: 480px;
+    }
+
+    .categoriesCarousel{
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        
+    }
+    .categoryItem{
+        width: 100%;
+       
+
+    }
+
+    .categoryImg{
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        height: 25vh;
+        -webkit-box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.50); 
+        box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.50);
+    }
+
+    .categoryTitle{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    .categoryTitle h3{
+        color: white;
+        font-size: 34px;
+        text-shadow: 2px 2px 9px rgba(0,0,0,0.80);
+    }
+
+}
+
+
+
+
+
+
+
+  

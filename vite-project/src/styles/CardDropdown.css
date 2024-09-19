@@ -1,0 +1,123 @@
+/* CartDropdown.css */
+.cart-dropdown {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 320px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart-dropdown.open {
+    display: block;
+  }
+  
+  .cart-dropdown h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+  
+  .item-details {
+    flex-grow: 1;
+  }
+  
+  .item-details .name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .cartManageProduct {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-control button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .quantity-control button:hover {
+    background-color: #ddd;
+  }
+  
+  .quantity-control span {
+    margin: 0 10px;
+    font-size: 1rem;
+  }
+  
+  .price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .cartDropdownFooter {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+  }
+  
+  .cartDropdownTotalQuantity,
+  .cartDropdownTotalPrice {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .cartDropdownGoToCart {
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cartDropdownGoToCart:hover {
+    background-color: #218838;
+  }
+  
+  .cartDropdownGoToCart a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .cart-dropdown span {
+    color: #888;
+  }
+  

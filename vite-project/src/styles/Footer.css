@@ -1,0 +1,124 @@
+.footer{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(185, 185, 185, 0.856);
+    flex-wrap: wrap;
+  }
+  
+  .footerAddress{
+      display: flex;
+      width: 35%;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding-left: 5vw;
+      padding-top: 2vh;
+  }
+  
+  .footerLinks, .footerHelp, .footerNewsletter{
+      width: 10%;
+      padding-top: 2vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+  }
+  
+  .footer li, .footer ul{
+      text-decoration: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .footer li{
+      font-size: 20px;
+      margin-bottom: 4vh;
+      font-size: 16px;
+  }
+  
+  .footer h3{
+      color: black;
+      font-weight: bold;
+      font-size: 25px;
+      margin-bottom: 5vh;
+  }
+  
+  .footerAddress p{
+      color: rgba(75, 75, 75, 0.7);
+  }
+  
+  .footerLinks p, .footerHelp p, .footerNewsletter p{
+      font-weight: bold;
+      margin-bottom: 5vh;
+      color: rgba(75, 75, 75, 0.7);
+  }
+  
+  .footerNewsletter{
+      width: 35%;
+      display: flex;
+      overflow: hidden;
+  }
+  
+  .footerNewsletterInput{
+      display: flex;
+      gap: 1vw;
+      flex-wrap: wrap;
+  }
+  
+  .footerNewsletterInput p{
+      color: black;
+      margin: 0;
+      border-bottom: solid black 1.5px;
+  }
+  
+  .footerNewsletter input{
+      font-size: 16px;
+      border: none;
+      border-bottom: solid black 1.5px;
+  }
+  
+  .rightReserved{
+  
+      padding: 15px;
+      width: 90%;
+      display: flex;
+      margin: auto;
+      border-top: 1px solid rgba(185, 185, 185, 0.856);
+  }
+  
+  @media (max-width: 768px) {
+      .footer{
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          text-align: center;
+          width: 100%;
+      }
+  
+      .footerAddress{
+          width: 100%;
+          margin: 0;
+          padding: 0;
+      }
+  
+      .footer h3{
+          margin-bottom: 0;
+      }
+  
+      .footerLinks{
+          display: none;
+      }
+  
+      .footerHelp{
+          width: 100%;
+      }
+  
+      .footerNewsletter{
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 5vh;
+      }
+  }

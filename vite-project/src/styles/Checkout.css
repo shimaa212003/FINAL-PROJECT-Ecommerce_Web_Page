@@ -1,0 +1,212 @@
+.checkoutBanner {
+    position: relative;  /* Ensures the pseudo-element positions relative to this container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+}
+
+.checkoutBanner::before {
+    content: ""; /* This is necessary for the pseudo-element to show */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url("https://picsum.photos/1920/1080");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; /* Covers the entire .shopBanner container */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* Makes sure the pseudo-element is below the text content */
+    width: 100%;
+    height: 100%;
+}
+
+.checkoutBanner h2{
+    font-size: 42px;
+}
+.checkoutBanner p{
+    font-size: 20px;
+}
+
+.checkoutBanner span{
+    font-weight: bold;
+}
+
+.billingDetails{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+.billingDetails h3{
+    color: black;
+    font-size: 30px;
+    margin-bottom: 7vh;
+}
+
+.billingDetails label{
+    font-weight: 600;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    gap: 2vh;
+    margin-bottom: 3vh;
+}
+
+.billingDetails input{
+    padding: 25px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+.billingDetails input:focus{
+    outline: none;
+    border: solid 2px black;
+    background-color: transparent;
+}
+
+.billingDetails select{
+    font-size: 18px;
+    padding: 25px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.billingDetails select:focus{
+    outline: none;
+    border: solid 2px black;
+    background-color: transparent;
+}
+.nameInputs form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nameInputs label{
+    width: 45%
+}
+
+.checkoutContainer{
+    display: flex;
+    padding-top: 7vh;
+    margin-bottom: 7vh;
+}
+
+.billingRecap{
+    width: 35%;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 10vh;
+}
+
+.checkoutProducts{
+    display: flex;
+    flex-direction: column;
+    border-bottom: #D9D9D9 solid 1px;
+}
+
+.checkoutProductsLine1, .checkoutProductsLine2, .checkoutProductsLine3, .checkoutProductsLine4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkoutProductsLine1{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.checkoutProductsLine2, .checkoutProductsLine3, .checkoutProductsLine4{
+    color: black;
+    font-weight: 500;
+}
+
+.checkoutProductsLine2 span{
+    color: #9F9F9F;
+}
+
+.checkoutProductsLine3, .checkoutProductsLine4{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.checkoutProductsLine4 span{
+    color: #B88e2F;
+    font-size: 26px;
+}
+
+.paymentOption{
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+.paymentOption input{
+    padding-top: 0;
+}
+.paymentOption label{
+    color: #9F9F9F;
+    font-weight: 500;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+
+.paymentOption input[type="radio"]:checked + label {
+    color: black;
+}
+
+.paymentOption p{
+    display: none;
+}
+.paymentOption input[type="radio"]:checked + label + p {
+    display: block;
+    color: #9F9F9F;
+}
+
+.placeOrderButton button{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.placeOrderButton{
+    border: solid 1px black;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: 60%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .checkoutContainer{
+        
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .billingDetails{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 10vh;
+        margin-right: 10vh;
+    }
+    .billingRecap{
+        width: 90%;
+    }
+}
