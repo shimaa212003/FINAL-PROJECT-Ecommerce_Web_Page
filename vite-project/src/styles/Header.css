@@ -91,7 +91,12 @@ a{
     opacity: 1;  /* Make fully visible */
 }
 
-
+.price {
+    font-size: 1rem;
+    font-weight: 500;
+    color:#B88e2F;
+  }
+  
 .cart-dropdown h3{
     color: black;
     border-bottom: solid 1px #9d9d9d;
@@ -189,7 +194,44 @@ color: #B88E2F;
 
 .cart-item{
     cursor: pointer;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
 }
+.cart-dropdown h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+  } 
+
+  .item-details .name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+    
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius:4px;
+    margin-right: 15px;
+  }
+
+  .item-details {
+    flex-grow: 1;
+  }
+
+  .quantity {
+    font-size: 0.9rem; /* Adjust font size as needed */
+    color: #666; /* Change color for visibility */
+    margin-left: 10px; /* Space between name and quantity */
+  }
+  
+
 .cart-container img {
     cursor: pointer;
 }
@@ -305,11 +347,11 @@ color: #B88E2F;
     z-index: 1001; /* Just below the dropdown */
 }
 
-.cart-dropdown h3 {
+/* .cart-dropdown h3 {
     color: black;
     border-bottom: solid 1px #9d9d9d;
     padding-bottom: 2vh;
-}
+} */
 
 /* Ensure to adjust your styles based on the needs */
 

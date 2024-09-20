@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import CartContext from "./CartContext";
 
-function CounterWithCart({ product, selectedSize, selectedColor }) {
+function CounterWithCart({ product }) {
   const { addProduct } = useContext(CartContext);
 
   const [count, setCount] = useState(1);

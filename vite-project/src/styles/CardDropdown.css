@@ -1,54 +1,22 @@
 /* CartDropdown.css */
-.cart-dropdown {
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 320px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    z-index: 100;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-  }
+
   
   .cart-dropdown.open {
     display: block;
   }
   
-  .cart-dropdown h3 {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-    color: #333;
-  }
-  
+ 
+   
   .cart-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
+
   
-  .cart-item img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-right: 15px;
-  }
   
-  .item-details {
-    flex-grow: 1;
-  }
   
-  .item-details .name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 5px;
-  }
+ 
   
   .cartManageProduct {
     display: flex;
@@ -80,11 +48,7 @@
     font-size: 1rem;
   }
   
-  .price {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-  }
+ 
   
   .cartDropdownFooter {
     border-top: 1px solid #ddd;
@@ -99,3 +63,6 @@
   }
   
  
+
+
+  
