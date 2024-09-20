@@ -144,7 +144,7 @@ function CartDropdown({ isOpen, closeCart }) {
                     removeProduct(item.id);
                   }}
                 >
-                  <span> <img src="../../public/delete (1).svg" style={{
+                  <span> <img src="/delete (1).svg" style={{
                     width:"20px",
                     height:"20px"
                   }}></img></span>
