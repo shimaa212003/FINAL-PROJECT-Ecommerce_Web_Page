@@ -89,53 +89,40 @@
   }
   
   @media (max-width: 768px) {
-      .footer{
-          display: flex;
-          flex-direction: column;
-          height: auto;
-          text-align: center;
-          width: 100%;
-      }
-  
-      .footerAddress{
-          width: 100%;
-          margin: 0;
-          padding: 0;
-      }
-  
-      .footer h3{
-          margin-bottom: 0;
-      }
-  
-      .footerLinks{
-          display: none;
-      }
-  
-      .footerHelp{
-          width: 100%;
-      }
-  
-      .footerNewsletter{
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 5vh;
-      }
-  }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        width: 100%;
+    }
 
-  .footerLinks {
-    width: 10%;
-    padding-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
+    .footerAddress {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-/* Add this media query to make footerLinks visible on mobile */
-@media (max-width: 768px) {
-    .footerLinks {
-        width: 100%; /* Full width on mobile */
-        display: flex; /* Ensure it displays as a flex container */
+    .footer h3 {
+        margin-bottom: 0;
+    }
+
+    .footerLinks,
+    .footerHelp {
+        width: 50%; /* Set each column to take half the width */
+        margin: 0 auto; /* Center the columns */
+    }
+
+    .footerNewsletter {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5vh;
+    }
+
+    .footer {
+        flex-direction: row; /* Set footer to display columns side by side */
+        justify-content: center; /* Center the columns */
     }
 }
+
