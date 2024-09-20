@@ -1,6 +1,7 @@
 
-import "../styles/Footer.css"
-import { Link } from "react-router-dom"
+import "../styles/Footer.css";
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <div className="footerPart">
@@ -18,10 +19,9 @@ function Footer() {
         <div className="footerLinks">
           <p>Links</p>
           <ul>
-          <li> <Link to= '/'>Home</Link> </li>
-           <li> <Link to='/shop' >Shop</Link></li>
-              <li> About</li>
-            <li> <Link to='/Contact'>Contact</Link></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/shop'>Shop</Link></li>
+            <li><Link to='/Contact'>Contact</Link></li>
           </ul>
         </div>
         <div className="footerHelp">
@@ -35,16 +35,16 @@ function Footer() {
         <div className="footerNewsletter">
           <p>Newsletter</p>
           <div className="footerNewsletterInput">
-            <input type="text" placeholder="Enter Your Email Address"></input>
+            <input type="text" placeholder="Enter Your Email Address" />
             <p>SUBSCRIBE</p>
           </div>
         </div>
       </div>
       <div className="rightReserved">
-        <p>2023 furniro. All rights reserved</p>
+        <p>2023 Furniro. All rights reserved</p>
       </div>
     </div>
   );
 }
 
-export default Footer
+export default Footer;

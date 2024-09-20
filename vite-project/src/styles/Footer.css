@@ -122,3 +122,20 @@
           margin-bottom: 5vh;
       }
   }
+
+  .footerLinks {
+    width: 10%;
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Add this media query to make footerLinks visible on mobile */
+@media (max-width: 768px) {
+    .footerLinks {
+        width: 100%; /* Full width on mobile */
+        display: flex; /* Ensure it displays as a flex container */
+    }
+}
