@@ -84,29 +84,6 @@ a{
     align-items: center;
   }
 
-  /* .cart-dropdown {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0vw;  
-    height: 50vh;
-    background-color: rgb(255, 255, 255);
-    overflow-x: hidden;
-    transition: 0.6s ease;  
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    visibility: hidden;
-    opacity: 0;
-    font-size: 16px;
-    font-weight: 500;
-    justify-content: space-between;
-} */
-
 
 .cart-dropdown.open {
     width: 20vw;  /* Expand the width when open */
@@ -335,3 +312,48 @@ color: #B88E2F;
 }
 
 /* Ensure to adjust your styles based on the needs */
+
+
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeOut 3s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+
+  /* In your CSS file (e.g., Header.css or Cart.css) */
+.cart-message {
+    position: fixed; /* Keep it fixed at the bottom of the screen */
+    bottom: 10px; /* Align to the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for perfect center alignment */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Some padding for a better look */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Adjust the font size */
+    z-index: 9999; /* Ensure it appears above other elements */
+    display: none; /* Hidden by default, shown when message is present */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fade in effect */
+  }
+  
+  .cart-message.show {
+    display: block;
+    opacity: 1; /* Fade in when the message is shown */
+  }
+  

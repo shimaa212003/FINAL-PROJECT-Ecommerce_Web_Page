@@ -102,7 +102,7 @@
     font-size: 20px;
   }
   
-  .contactSubmitButton{
+  .contactSubmitButton .submit-btn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,13 +119,30 @@
     padding-bottom: 2vh;
     cursor: pointer;
   }
+
+  .submit-btn:hover {
+    background-color:yellow; /* Darker green when hovered */
+  }
   
   .error{
     color: red;
     text-align: center;
   }
   
+  .toast-message {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 16px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 5px;
+  }
   
+
+  
+
   
   
   @media (max-width: 768px) {
@@ -134,6 +151,30 @@
         margin-left: 5%;
         margin-right: 5%;
         width: 90%;
+    }
+
+    .contactSubmitButton .submit-btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #B88B2F;
+      width: 100%;
+      -webkit-box-shadow: 2px 3px 6px -4px #000000; 
+      box-shadow: 5px 4px 7px -6px #000000;
+      border-radius: 5px;
+      font-weight: 600;
+      padding-top: 2vh;
+      padding-left: 2vh;
+      padding-right: 2vh;
+      padding-bottom: 2vh;
+      cursor: pointer;
+    }
+
+
+    
+    .submit-btn:hover {
+      background-color:yellow; /* Darker green when hovered */
     }
   
     .contactForm{

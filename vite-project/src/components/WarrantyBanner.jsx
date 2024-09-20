@@ -5,7 +5,7 @@ function WarrantyBanner() {
     <div className="servicesBanner">
       <div className="highQuality">
         <div className="highQualityIcon">
-         <img src="../../public/trophy 1.svg"></img>
+         <img src="/trophy 1.svg"></img>
         </div>
         <div className="highQualityText">
           <h3>  High Quality</h3>
@@ -14,7 +14,7 @@ function WarrantyBanner() {
       </div>
       <div className="warrantyProtection">
         <div className="warrantyProtectionIcon">
-          <img src="../../public/guarantee.svg"></img>
+          <img src="/guarantee.svg"></img>
         </div>
         <div className="warrantyProtectionText">
           <h3>Warranty Protection</h3>
@@ -23,7 +23,7 @@ function WarrantyBanner() {
       </div>
       <div className="freeShipping">
         <div className="freeShippingIcon">
-        <img src="../../public/shipping.svg"></img>
+        <img src="/shipping.svg"></img>
         </div>
         <div className="freeShippingText">
           <h3>   Free Shipping</h3>
@@ -32,7 +32,7 @@ function WarrantyBanner() {
       </div>
       <div className="support">
         <div className="supportIcon">
-         <img src="../../public/customer-support.svg"></img>
+         <img src="/customer-support.svg"></img>
         </div>
         <div className="supportText">
           <h3>24 / 7 Support</h3>

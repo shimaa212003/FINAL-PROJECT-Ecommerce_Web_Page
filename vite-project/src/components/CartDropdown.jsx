@@ -1,12 +1,10 @@
 
-
-
 import { useContext, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CartContext from "./CartContext";
 
 function CartDropdown({ isOpen, closeCart }) {
-  const { cartItems, setCartItems, removeProduct } = useContext(CartContext);
+  const { cartItems, setCartItems, removeProduct, message } = useContext(CartContext);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -29,15 +27,9 @@ function CartDropdown({ isOpen, closeCart }) {
     };
   }, [isOpen, closeCart]);
 
-  const totalQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + item.quantity * item.price,
-    0
-  );
+  const totalPrice = cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
 
   const increaseQuantity = (id) => {
     const updatedCart = cartItems.map((item) => {
@@ -85,19 +77,32 @@ function CartDropdown({ isOpen, closeCart }) {
               <span className="name">{item.title}</span>
               <div className="cartManageProduct">
                 <div className="quantity-control">
-                  <button 
-                    onClick={(e) => { e.stopPropagation(); decreaseQuantity(item.id); }}
-                    disabled={item.quantity <= 1} // Disable button if quantity <= 1
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      decreaseQuantity(item.id);
+                    }}
+                    disabled={item.quantity <= 1}
                   >
                     -
                   </button>
                   <span>{item.quantity}</span>
-                  <button onClick={(e) => { e.stopPropagation(); increaseQuantity(item.id); }}>+</button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      increaseQuantity(item.id);
+                    }}
+                  >
+                    +
+                  </button>
                 </div>
-                <span className="price">
-                  ${(item.price * item.quantity).toFixed(2)}
-                </span>
-                <button onClick={(e) => { e.stopPropagation(); removeProduct(item.id); }}>
+                <span className="price">${(item.price * item.quantity).toFixed(2)}</span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeProduct(item.id);
+                  }}
+                >
                   <span>x</span>
                 </button>
               </div>
@@ -116,6 +121,9 @@ function CartDropdown({ isOpen, closeCart }) {
           <div className="cartDropdownGoToCart">Go to Cart</div>
         </Link>
       </div>
+
+      {/* Display the message when a product is added */}
+      {message && <div className="cart-message">{message}</div>}
     </div>
   );
 }

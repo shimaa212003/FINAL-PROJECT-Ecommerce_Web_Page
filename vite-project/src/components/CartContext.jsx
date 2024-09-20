@@ -1,6 +1,6 @@
 
 
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 // Create a context
 const CartContext = createContext();
@@ -8,6 +8,7 @@ const CartContext = createContext();
 // Create a provider component
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [message, setMessage] = useState(""); // State for displaying messages
 
   // Load cart from localStorage on initial load
   useEffect(() => {
@@ -22,39 +23,44 @@ export const CartProvider = ({ children }) => {
 
   // Function to add a product to the cart
   const addProduct = (product) => {
-    // Check if the product with the same id, size, and color exists in the cart
-    const existingProductIndex = cartItems.findIndex(
-      (item) =>
-        item.id === product.id &&
-        item.size === product.size &&
+    const existingProductIndex = cartItems.findIndex((item) => {
+      const isColorEqual =
+        Array.isArray(item.color) &&
+        Array.isArray(product.color) &&
         item.color.length === product.color.length &&
-        item.color.every((v, i) => v === product.color[i])
-    );
+        item.color.every((v, i) => v === product.color[i]);
+
+      return item.id === product.id && item.size === product.size && isColorEqual;
+    });
 
     let updatedCart;
 
     if (existingProductIndex > -1) {
-      // If the product exists, update its quantity
       const existingProduct = cartItems[existingProductIndex];
       updatedCart = [...cartItems];
       updatedCart[existingProductIndex] = {
         ...existingProduct,
-        quantity: existingProduct.quantity + product.quantity,
+        quantity: existingProduct.quantity + product.quantity, // Update quantity
       };
     } else {
-      // If the product doesn't exist, add it to the cart
-      updatedCart = [...cartItems, product];
+      updatedCart = [...cartItems, product]; // Add new product to cart
     }
 
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update localStorage
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Sync to localStorage after adding
+
+    // Set message for 3 seconds
+    setMessage(`Added ${product.title} to cart!`);
+    setTimeout(() => {
+      setMessage(""); // Clear the message after 3 seconds
+    }, 3000);
   };
 
   // Function to remove a product from the cart by ID
   const removeProduct = (productId) => {
     const updatedCart = cartItems.filter((item) => item.id !== productId);
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update localStorage
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Sync to localStorage after removal
   };
 
   // Function to clear the entire cart
@@ -74,6 +80,7 @@ export const CartProvider = ({ children }) => {
         removeProduct,
         clearCart,
         totalItems,
+        message, // Include message in the context
       }}
     >
       {children}
@@ -87,3 +94,6 @@ export const useCart = () => {
 };
 
 export default CartContext;
+
+
+

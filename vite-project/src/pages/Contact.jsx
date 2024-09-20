@@ -1,180 +1,7 @@
 
-// import WarrantyBanner from "../components/WarrantyBanner"
-// import "../styles/Contact.css"
-// import * as yup from "yup" //library for validation
-// import { useState } from "react"
-
-
-
-// function Contact() {
-//   const [formData, setFormData] = useState({
-//     yourname: "",
-  
-//     email: "",
-//     subject:"",
-//     message: "",
-  
-//   });
-
-//   const [error, setError] = useState({});
-//   const [toastVisible, setToastVisible] = useState(false);
-
-//   const userSchema = yup.object().shape({
-//     yourname: yup.string().required("This field is required"),
-//     email: yup
-//     .string()
-//     .email("Please enter a valid email address")
-//     .required("This field is required"),
-//     subject: yup.string().required("This field is required"),
-//   message: yup.string().required("This field is required"),
-//   })
-
-//   async function formValidation() {
-//     try {
-//       const res = await userSchema.validate(formData, { abortEarly: false });
-//       setError({});
-//       return true;
-//     } catch (e) {
-//       const newErrors = {};
-//       e.inner.forEach((error) => {
-//         newErrors[error.path] = error.message;
-//       });
-//       setError(newErrors);
-//       return false;
-//     }
-//   }
-
-//   async function handleOnsubmitForm(event) {
-//     event.preventDefault();
-//     const isValid = await formValidation();
-//     if (isValid) {
-//       setToastVisible(true);
-//       setTimeout(() => {
-//         setToastVisible(false);
-//       }, 3000);
-//       setFormData({
-//         yourname: "",
-       
-//         email: "",
-//         subject: "",
-//         message: "",
-       
-//       });
-//     }}
-
-
-//     function handleOnChange(event) {
-//       const keyName = event.target.name;
-//       let keyValue = event.target.value;
-//       const type = event.target.type;
-//       if (type === "checkbox") {
-//         keyValue = event.target.checked;
-//       }
-//       setFormData({
-//         ...formData,
-//         [keyName]: keyValue,
-//       });
-//     }
-
-
-
-
-
-
-//   return (
-// <>
-
-
-
-//     <div>
-
-
-
-//       <div className="contactBanner">
-//         <h2>Contact</h2>
-//         <p>
-//           <span>Home {">"} </span>
-//           Contact
-//         </p>
-//       </div>
-//       <div className="contactTitles">
-//         <h2>Get In Touch With Us</h2>
-//         <p>
-//           For more informations about our products & services. Please feel free
-//           to drop us an email. Our staff will always be there to help you out.
-//           Do not hesitate !
-//         </p>
-//       </div>
-
-  
-//       <div className="contactFormContainer">
-
-     
-
-//         <form className="contactForm" onSubmit={handleOnsubmitForm}  >
-//           <label>
-//             Your name
-//             <input type="text" name="yourname" placeholder="Your Name"   value={formData.yourname}
-//                 onChange={handleOnChange}  />
-
-//                {error.yourname && (<span className="error">{error.yourname}</span>
-//               )}
-//           </label>
-//           <label htmlFor="email">
-//             Email address
-//             <input type="email" name="email" placeholder="Your Email"   value={formData.email}
-//               onChange={handleOnChange}  />
-//               {error.email && <span className="error">{error.email}</span>}
-//           </label>
-//           <label>
-//             Subject
-//             <input type="text" name="subject" placeholder="Subject"   value={formData.subject}
-//               onChange={handleOnChange}  />
-//             {error.subject && <span className="error">{error.subject}</span>}
-//           </label>
-//           <label  htmlFor="message" >
-//             Message
-//             <textarea name="message" placeholder="Your Message"  value={formData.message}
-//               onChange={handleOnChange}   ></textarea>
-
-// {error.message && <span className="error">{error.message}</span>}
-//           </label>
-//           <div className="contactSubmitButton">
-//             <button type="submit">Submit</button>
-//           </div>
-//         </form>
-//       </div>
-//       <WarrantyBanner />
-//     </div>
-//     </>
-//   );
-// }
-
-// export default Contact;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import Location from '../../public/location.png';
-import Phone from '../../public/phone.png';
-import Clock from '../../public/clock.png';
+import Location from '/location.png';
+import Phone from '/phone.png';
+import Clock from '/clock.png';
 import WarrantyBanner from "../components/WarrantyBanner";
 import "../styles/Contact.css";
 import * as yup from "yup"; // library for validation
@@ -220,10 +47,11 @@ function Contact() {
     event.preventDefault();
     const isValid = await formValidation();
     if (isValid) {
-      setToastVisible(true);
+      setToastVisible(true); // Show success message
       setTimeout(() => {
-        setToastVisible(false);
+        setToastVisible(false); // Hide after 3 seconds
       }, 3000);
+
       setFormData({
         yourname: "",
         email: "",
@@ -258,8 +86,6 @@ function Contact() {
           </p>
         </div>
 
-  
-
         {/* Contact Titles */}
         <div className="contactTitles">
           <h2>Get In Touch With Us</h2>
@@ -269,8 +95,7 @@ function Contact() {
           </p>
         </div>
 
-
-              <section className="moreContact container">
+        <section className="moreContact container">
           <ul className="infoContact">
             <li>
               <img src={Location} alt="Location" />
@@ -296,64 +121,71 @@ function Contact() {
               </div>
             </li>
           </ul>
-       
 
-        {/* Contact Form Section */}
-        <div className="contactFormContainer">
-          <form className="contactForm" onSubmit={handleOnsubmitForm}>
-            <label>
-              Your name
-              <input
-                type="text"
-                name="yourname"
-                placeholder="Your Name"
-                value={formData.yourname}
-                onChange={handleOnChange}
-              />
-              {error.yourname && <span className="error">{error.yourname}</span>}
-            </label>
+          {/* Contact Form Section */}
+          <div className="contactFormContainer">
+            <form className="contactForm" onSubmit={handleOnsubmitForm}>
+              <label>
+                Your name
+                <input
+                  type="text"
+                  name="yourname"
+                  placeholder="Your Name"
+                  value={formData.yourname}
+                  onChange={handleOnChange}
+                />
+                {error.yourname && <span className="error">{error.yourname}</span>}
+              </label>
 
-            <label>
-              Email address
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleOnChange}
-              />
-              {error.email && <span className="error">{error.email}</span>}
-            </label>
+              <label>
+                Email address
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleOnChange}
+                />
+                {error.email && <span className="error">{error.email}</span>}
+              </label>
 
-            <label>
-              Subject
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={handleOnChange}
-              />
-              {error.subject && <span className="error">{error.subject}</span>}
-            </label>
+              <label>
+                Subject
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleOnChange}
+                />
+                {error.subject && <span className="error">{error.subject}</span>}
+              </label>
 
-            <label>
-              Message
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={handleOnChange}
-              ></textarea>
-              {error.message && <span className="error">{error.message}</span>}
-            </label>
+              <label>
+                Message
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleOnChange}
+                ></textarea>
+                {error.message && <span className="error">{error.message}</span>}
+              </label>
 
-            <div className="contactSubmitButton">
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
+              <div className="contactSubmitButton">
+                <button type="submit" className="submit-btn"  >Submit</button>
+              </div>
+            </form>
+
+            {/* Toast Message for Successful Form Submission */}
+            {toastVisible && (
+              <div className="toast-message">
+                Form submitted successfully!
+              </div>
+            )}
+          </div>
         </section>
+
         {/* Warranty Banner */}
         <WarrantyBanner />
       </div>
