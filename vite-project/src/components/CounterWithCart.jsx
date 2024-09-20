@@ -20,8 +20,8 @@ function CounterWithCart({ product }) {
   const handleAddToCart = () => {
     const productToAdd = {
       ...product,
-      size: selectedSize,
-      color: selectedColor ? [selectedColor] : [],
+      // size: selectedSize,
+      // color: selectedColor ? [selectedColor] : [],
       quantity: count,
     };
     addProduct(productToAdd);

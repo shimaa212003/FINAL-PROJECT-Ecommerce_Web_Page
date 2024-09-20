@@ -107,8 +107,8 @@ function Product() {
 
             <CounterWithCart
               product={product}
-              selectedSize={selectedSize}
-              selectedColor={selectedColor}
+              // selectedSize={selectedSize}
+              // selectedColor={selectedColor}
               onAddToCart={handleAddToCart}
             />
           </div>

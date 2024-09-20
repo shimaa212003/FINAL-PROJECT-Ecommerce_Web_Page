@@ -358,7 +358,7 @@
 
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import "../styles/Shop.css";
 import WarrantyBanner from "../components/WarrantyBanner";

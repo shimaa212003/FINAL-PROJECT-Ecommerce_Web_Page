@@ -25,13 +25,13 @@ const ProductCard = ({ product, onClick }) => {
       onClick={onClick}
     >
       <img src={product.image} alt={product.title} />
-      <button
-        className="add-to-cart-button"
-        onClick={handleAddToCart}
-        style={{ opacity: isHovered ? 1 : 0 }}
-      >
-        Add to Cart
-      </button>
+      {isHovered && (
+        <div className="overlay">
+          <button className="add-to-cart-button" onClick={handleAddToCart}>
+            Add to Cart
+          </button>
+        </div>
+      )}
       <div className="product-info">
         <div className="product-name">{product.title}</div>
         <div className="product-category">{product.category}</div>

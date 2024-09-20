@@ -201,6 +201,7 @@
     height: fit-content;
     margin-left: 50px;
     margin-top: 50px;
+    
   }
   
   th {
@@ -213,7 +214,10 @@
     padding: 10px;
   }
   
-
+  .trbody{
+    width: 50%;
+    display: flex;
+  }
   
   tbody tr:hover {
     background-color: #ececec; 
@@ -248,7 +252,7 @@
     flex-direction: column;
   }
 .tab .table{
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 
