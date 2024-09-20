@@ -83,4 +83,37 @@
     z-index: 1; /* Ensures the overlay is above other elements */
     transition: background-color 0.3s ease; /* Smooth transition */
   }
-  
+  /* Mobile Styles */
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .product-card img {
+    width: 100%; /* Image also takes full width */
+    height: auto;
+  }
+
+  .add-to-cart-button {
+    padding: 8px 16px; /* Smaller button for mobile */
+    font-size: 14px; /* Adjust button text size */
+  }
+
+  .overlay {
+    opacity: 1; /* Always visible on mobile */
+  }
+  .product-name {
+    font-size: 20px; /* Adjusted font size for mobile */
+  }
+
+  .product-info {
+    padding: 5px; /* Less padding on mobile */
+  }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; } 
+} 

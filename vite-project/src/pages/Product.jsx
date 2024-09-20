@@ -1,6 +1,4 @@
 
-
-
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom"; // Import useNavigate
 import Rating from "../components/Rating";
@@ -20,6 +18,7 @@ function Product() {
   const [selectedSize, setSelectedSize] = useState(null); 
   const [selectedColor, setSelectedColor] = useState(null); 
   const addToCart = useCartStore((state) => state.addToCart); 
+  const [activeProductId, setActiveProductId] = useState(null); // Track active product
 
   // Fetch product details by ID
   useEffect(() => {
@@ -107,14 +106,10 @@ function Product() {
 
             <CounterWithCart
               product={product}
-              // selectedSize={selectedSize}
-              // selectedColor={selectedColor}
               onAddToCart={handleAddToCart}
             />
           </div>
         </div>
-
-       
 
         <div className="productRefs">
           <div className="productRef">
@@ -130,12 +125,13 @@ function Product() {
           </div>
         </div>
       </div>
-      <div className="line"></div>
-      <section className="productDescription">
-          <h2 className="title">Description</h2>
-          <p className="description">{product.description}</p>
-        </section>
 
+      <div className="line"></div>
+      
+      <section className="productDescription">
+        <h2 className="title">Description</h2>
+        <p className="description">{product.description}</p>
+      </section>
 
       {relatedProducts.length > 0 && (
         <div className="relatedProducts">
@@ -145,6 +141,8 @@ function Product() {
               <ProductCard
                 product={relatedProduct}
                 key={relatedProduct.id}
+                activeProductId={activeProductId} // Pass active product ID
+                setActiveProductId={setActiveProductId} // Set active product
                 onClick={() => handleRelatedProductClick(relatedProduct.id)} // Pass the click handler
               />
             ))}
