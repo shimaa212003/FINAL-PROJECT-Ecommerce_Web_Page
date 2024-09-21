@@ -1,119 +1,129 @@
+.product-card {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  border-radius: 0;
+  overflow: hidden;
+}
 
+.product-card:hover {
+  transform: scale(1.02);
+}
 
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 18.8125rem;
+  overflow: hidden;
+}
 
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
 
-  .product-card {
-    position: relative;
-    display: inline-block;
-     width: 400px;
-  }
-  
-  .product-card img {
-    /* width: 0%;
-    height: auto; */
-    width: 90%;
-    height: 18.8125rem;
-    
-    overflow: hidden;
-    
-  }
+.product-name {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
 
-  .product-name{
-    font-weight: 200;
-    font-size: 100px;
-  }
-  
-  .add-to-cart-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    color :#B88e2F;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .product-card:hover .add-to-cart-button {
-    opacity: 1;
-    
-  }
+.add-to-cart-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: #b88e2f;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
 
-  
-  .product-info {
-    padding: 10px;
- 
-    
-  } 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0;
+}
 
-  .product-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-   
+/* Show overlay only for active product */
+.product-card:hover .overlay,
+.product-card.active .overlay {
+  opacity: 1;
+}
 
-  .cart-message {
-    margin-top: 10px;
-    color: green;
-    font-size: 14px;
-    text-align: center;
-    animation: fadeInOut 3s ease-in-out;
-  }
-  
-  @keyframes fadeInOut {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1; /* Ensures the overlay is above other elements */
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-  /* Mobile Styles */
-@media (max-width: 768px) {
-  .product-card {
-    width: 100%; /* Full width on mobile */
-  }
+.product-card:hover .add-to-cart-button,
+.product-card.active .add-to-cart-button {
+  opacity: 1;
+}
 
-  .product-card img {
-    width: 100%; /* Image also takes full width */
-    height: auto;
-  }
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
 
-  .add-to-cart-button {
-    padding: 8px 16px; /* Smaller button for mobile */
-    font-size: 14px; /* Adjust button text size */
-  }
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .overlay {
-    opacity: 1; /* Always visible on mobile */
-  }
-  .product-name {
-    font-size: 20px; /* Adjusted font size for mobile */
-  }
-
-  .product-info {
-    padding: 5px; /* Less padding on mobile */
-  }
+.cart-message {
+  margin-top: 10px;
+  color: green;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeInOut 3s ease-in-out;
 }
 
 @keyframes fadeInOut {
   0% { opacity: 0; }
   10% { opacity: 1; }
   90% { opacity: 1; }
-  100% { opacity: 0; } 
-} 
+  100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .add-to-cart-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .product-name {
+    font-size: 1.2rem;
+  }
+
+  .product-info {
+    padding: 5px;
+  }
+
+  .overlay {
+    opacity: 1;
+  }
+}

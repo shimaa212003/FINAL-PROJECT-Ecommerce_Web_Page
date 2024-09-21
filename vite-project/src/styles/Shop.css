@@ -1,8 +1,8 @@
 
-.load{
-  font-size: 50px;
+/* .load{
+  font-size: 30px;
   align-items: center;
-}
+} */
 .shopBanner {
     position: relative;  /* Ensures the pseudo-element positions relative to this container */
     display: flex;

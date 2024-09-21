@@ -121,7 +121,8 @@
   }
 
   .submit-btn:hover {
-    background-color:yellow; /* Darker green when hovered */
+    background-color:yellow; 
+color: #000000;
   }
   
   .error{

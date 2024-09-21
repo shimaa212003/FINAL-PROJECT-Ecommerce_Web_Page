@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CartContext from "./CartContext";
 import "../styles/ProductCard.css";
@@ -23,22 +24,26 @@ const ProductCard = ({ product, onClick, activeProductId, setActiveProductId }) 
 
   return (
     <div
-      className="product-card"
+      className={`product-card ${isActive ? "active" : ""}`}
       onMouseEnter={() => setActiveProductId(product.id)} // Set product active on hover
       onMouseLeave={() => setActiveProductId(null)} // Clear active product on mouse leave
       onTouchStart={handleTouchStart}  // Set product active on touch
       onClick={onClick} // Handle product click
     >
-      <img src={product.image} alt={product.title} />
-      {isActive && ( // Show overlay only if this product is active
-        <div className="overlay">
-          <button className="add-to-cart-button" onClick={handleAddToCart}>
-            Add to Cart
-          </button>
-        </div>
-      )}
+      <div className="image-container">
+        <img src={product.image} alt={product.title} />
+        {isActive && ( // Show overlay only if this product is active
+          <div className="overlay">
+            <button className="add-to-cart-button" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
+          </div>
+        )}
+      </div>
       <div className="product-info">
-        <div className="product-name">{product.title}</div>
+        <Link to={`/product/${product.id}`} className="product-name">
+          {product.title}
+        </Link>
         <div className="product-category">{product.category}</div>
         <div className="product-price">${product.price}</div>
       </div>

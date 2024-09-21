@@ -50,10 +50,10 @@ function Shop() {
     const value = event.target.value === "all" ? products.length : parseInt(event.target.value);
     setShownProducts(value);
     setCurrentPage(1);
-  };
+  }
 
   if (loading) {
-    return <div className="load">Loading products...</div>;
+    return <div className="load">Loading products...</div>
   }
 
   return (
