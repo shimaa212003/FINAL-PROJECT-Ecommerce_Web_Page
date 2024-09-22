@@ -226,7 +226,7 @@ td img {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 566px) {
   .cartBanner {
     height: 30vh;
   }
@@ -284,7 +284,8 @@ td img {
     margin-top: 30px;
     overflow-x: auto;
     margin-right: 20px;
-    width: 50px;
+    width: 40px;
+    border-collapse: collapse;
   }
 
   th, td {
