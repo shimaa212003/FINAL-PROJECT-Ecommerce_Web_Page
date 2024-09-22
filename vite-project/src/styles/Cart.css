@@ -184,12 +184,12 @@ th, td {
 }
 
 table {
-  width: 90%;
+  width: 80%;
   border-collapse: collapse;
   height: fit-content;
   margin-left: 50px;
   margin-top: 50px;
-  overflow: x auto;
+  overflow-x: auto;
 }
 
 th {
@@ -213,10 +213,20 @@ tbody tr:hover {
 
 .Img {
   width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+td img {
+  max-width: 100px;  /* Set a maximum width for the image */
+  height: auto;
+  display: block;
+  margin: 0 auto;  /* Center the image in the table cell */
+  object-fit: cover; /* Ensures the image doesn't stretch */
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 578px) {
+@media (max-width: 768px) {
   .cartBanner {
     height: 30vh;
   }
@@ -260,7 +270,6 @@ tbody tr:hover {
 
   .totalPrice .subtotal, .totalPrice .total {
     justify-content: space-between;
-    
   }
 
   .checkoutBtn button {
@@ -270,7 +279,7 @@ tbody tr:hover {
   }
 
   table {
-    width: 100%;
+    width: 90%;
     margin-left: 0;
     margin-top: 30px;
     overflow-x: auto;
@@ -279,6 +288,12 @@ tbody tr:hover {
   th, td {
     font-size: 14px;
     padding: 8px;
+  }
+
+  td img {
+    max-width: 80px;  /* Reduce size on smaller screens */
+    height: auto;
+    object-fit: cover;
   }
 
   .Img {
