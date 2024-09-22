@@ -45,14 +45,19 @@ function CartDropdown({ isOpen, closeCart }) {
       {cartItems.length === 0 ? (
         <span>Your cart is empty</span>
       ) : (
+        
         cartItems.map((item) => (
-          <div key={item.id} className="cart-item" onClick={() => handleProductClick(item.id)}>
+          <div key={item.id} className="cart-item" onClick={() => handleProductClick(item.id)}
+            >
+
+            
             <img src={item.image} alt={item.title} />
+            
             <div className="item-details">
               <span className="name">{item.title}</span>
-              <span className="quantity"> {item.quantity}  x</span> {/* Display quantity here */}
+            
               <div className="cartManageProduct">
-                <span className="price">Rs.{(item.price * item.quantity).toFixed(2)}</span>
+                <span className="price">  <span className="quantity"> {item.quantity}  x</span> {/* Display quantity here */}         Rs.{(item.price * item.quantity).toFixed(2)}</span>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -62,7 +67,8 @@ function CartDropdown({ isOpen, closeCart }) {
                   <span> <img src="/delete (1).svg" style={{
                     width:"20px",
                     height:"20px"
-                  }}></img></span>
+                  }}>
+                    </img></span>
                 </button>
               </div>
             </div>
