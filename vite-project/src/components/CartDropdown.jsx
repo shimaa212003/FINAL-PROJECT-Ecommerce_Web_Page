@@ -47,18 +47,23 @@ function CartDropdown({ isOpen, closeCart }) {
       ) : (
         
         cartItems.map((item) => (
-          <div key={item.id} className="cart-item" onClick={() => handleProductClick(item.id)}
-            >
+          <div key={item.id} className="cart-item" onClick={() => handleProductClick(item.id)}>
+
+
+       
+               <img src={item.image} alt={item.title} />
+          
 
             
-            <img src={item.image} alt={item.title} />
-            
             <div className="item-details">
-              <span className="name">{item.title}</span>
+            <span className="name">{item.title}</span>
             
               <div className="cartManageProduct">
                 <span className="price">  <span className="quantity"> {item.quantity}  x</span> {/* Display quantity here */}         Rs.{(item.price * item.quantity).toFixed(2)}</span>
-                <button
+             
+                <button style={{
+                  alignSelf:"flex-end"
+                }}
                   onClick={(e) => {
                     e.stopPropagation();
                     removeProduct(item.id);
@@ -69,13 +74,24 @@ function CartDropdown({ isOpen, closeCart }) {
                     height:"20px",
                     marginLeft:"5px"
                   }}>
-                    </img></span>
+                    </img>
+                    </span>
                 </button>
+
+
               </div>
             </div>
           </div>
-        ))
+
+))
+          
+
+        
       )}
+
+
+
+
       <div className="cartDropdownFooter">
         <div className="cartDropdownTotalQuantity">
           <p>{totalQuantity} product(s) in cart</p>
@@ -96,3 +112,9 @@ function CartDropdown({ isOpen, closeCart }) {
 }
 
 export default CartDropdown;
+
+
+
+
+
+
