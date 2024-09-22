@@ -66,7 +66,8 @@ function CartDropdown({ isOpen, closeCart }) {
                 >
                   <span> <img src="/delete (1).svg" style={{
                     width:"20px",
-                    height:"20px"
+                    height:"20px",
+                    marginLeft:"5px"
                   }}>
                     </img></span>
                 </button>
