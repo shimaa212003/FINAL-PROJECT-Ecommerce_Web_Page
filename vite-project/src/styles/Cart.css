@@ -183,14 +183,14 @@ th, td {
   border-bottom: 1px solid #e0e0e0;
 }
 
-table {
+/* table {
   width: 80%;
   border-collapse: collapse;
   height: fit-content;
   margin-left: 50px;
   margin-top: 50px;
   overflow-x: auto;
-}
+} */
 
 th {
   font-size: 1rem;
@@ -279,10 +279,12 @@ td img {
   }
 
   table {
-    width: 90%;
+    
     margin-left: 0;
     margin-top: 30px;
     overflow-x: auto;
+    margin-right: 20px;
+    width: 50px;
   }
 
   th, td {
